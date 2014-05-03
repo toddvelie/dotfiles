@@ -12,8 +12,8 @@ Initial configuration for a new unix box
 This will automatically pull down a customized prompt and vim config.
 
 If any changes are mode:
-  git add <modified file>
-  git commit -m '<commit message>'
+  git add \<modified file\>
+  git commit -m '\<commit message\>'
   git push orign master
 
 To manually pull changes
