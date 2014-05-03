@@ -19,11 +19,6 @@ echo "...done"
 
 #########
 
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
-mkdir -p $olddir
-echo "...done"
-
 # change to the dotfiles directory
 echo "Changing to the $dir directory"
 cd $dir
@@ -44,6 +39,11 @@ for file in $files; do
 	# It's not a symlink, so move it, and create the proper symlink
 	else
 		if [[ -f ~/.$file ]]; then
+			if ! [[ -d $olddir ]]; then
+				echo "Creating $olddir for backup of existing dotfiles in ~"
+				mkdir -p $olddir
+				echo "...done"
+			fi
 			echo "Moving existing dotfile .$file from ~ to $olddir"
 			mv ~/.$file ~/dotfiles_old/
 	    fi
