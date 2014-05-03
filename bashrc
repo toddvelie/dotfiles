@@ -1,6 +1,11 @@
 # if gls exists, use it
 test -f /usr/local/bin/gls && alias ls="/usr/local/bin/gls --color=auto -F" 
 
+# Read in .dir_colors
+if [ "$TERM" != "dumb" ]; then
+  eval $(gdircolors ~/.dir_colors) 
+fi
+
 # Set Prompt
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]]  && infocmp gnome-256color >/dev/null 2>&1; then TERM=gnome-256color; fi
 if tput setaf 1 &> /dev/null; then 
