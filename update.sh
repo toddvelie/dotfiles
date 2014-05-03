@@ -12,7 +12,7 @@ files="bashrc vimrc vim dir_colors"    # list of files/folders to symlink in hom
 
 ########## Refresh git and submodules
 echo "Refreshing from GitHub"
-git update origin master
+git pull origin master
 git submodule init 
 git submodule update
 echo "...done"
