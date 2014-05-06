@@ -1,9 +1,32 @@
-# if gls exists, use it
-test -f /usr/local/bin/gls && alias ls="/usr/local/bin/gls --color=auto -F" 
+# If not running interactively, don't do anything
+[[ "$-" != *i* ]] && return
+
+# Shell Options
+#
+# When changing directory small typos can be ignored by bash
+# for example, cd /vr/lgo/apaache would find /var/log/apache
+shopt -s cdspell
+
+# Don't put duplicate lines in the history.
+export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+
+# Aliases
+# if gls exists, use it (Happens on MaxOSX when I have to install GNU Coreutils.)
+if [ hash gls 2>/dev/null ]; then
+	alias ls="gls --color=auto -F" 
+else
+	alias ls="ls --color -F"
+fi
+if [ hash gdircolors 2>/dev/null]; then
+	alias dircolors='gdircolors'
+fi
+alias grep='grep --color'                     # show differences in colour
+alias egrep='egrep --color=auto'              # show differences in colour
+alias fgrep='fgrep --color=auto'              # show differences in colour
 
 # Read in .dir_colors
 if [ "$TERM" != "dumb" ]; then
-  eval $(gdircolors ~/.dir_colors) 
+  eval $(dircolors ~/.dir_colors) 
 fi
 
 # Set Prompt
