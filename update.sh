@@ -9,14 +9,29 @@
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc vim dir_colors"    # list of files/folders to symlink in homedir
+updatemethod="git"
+
+########## Determine update method
+echo "Determining update method"
+if [ hash git 2> /dev/null ]; then
+    updatemethod="git"
+else
+    updatemethod="scp"
+fi
+echo "Selected $updatemethod."
 
 ########## Refresh git and submodules
-echo "Refreshing from GitHub"
-git pull origin master
-git submodule init 
-git submodule update
-echo "...done"
-
+if [[ $updatemethod == "git" ]]; then
+   echo "Refreshing from GitHub"
+   git pull origin master
+   git submodule init
+   git submodule update
+   echo "...done"
+else
+    echo "Pulling dotfiles directory"
+#    scp -r wn7-d-toddv:~/dotfiles .
+    echo "...done"
+fi
 #########
 
 # change to the dotfiles directory
