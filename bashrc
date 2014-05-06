@@ -17,7 +17,7 @@ if [ hash gls 2>/dev/null ]; then
 else
 	alias ls="ls --color -F"
 fi
-if [ hash gdircolors 2>/dev/null]; then
+if [ hash gdircolors 2>/dev/null ]; then
 	alias dircolors='gdircolors'
 fi
 alias grep='grep --color'                     # show differences in colour
