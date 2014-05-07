@@ -13,7 +13,7 @@ updatemethod="git"
 
 ########## Determine update method
 echo "Determining update method"
-if [ hash git 2> /dev/null ]; then
+if command -v git >/dev/null != ''; then
     updatemethod="git"
 else
     updatemethod="scp"
