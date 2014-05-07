@@ -12,12 +12,12 @@ export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 
 # Aliases
 # if gls exists, use it (Happens on MaxOSX when I have to install GNU Coreutils.)
-if [ hash gls 2>/dev/null ]; then
+if command -v gls >/dev/null != ''; then
 	alias ls="gls --color=auto -F" 
 else
 	alias ls="ls --color -F"
 fi
-if [ hash gdircolors 2>/dev/null ]; then
+if command -v gdircolors >/dev/null != ''; then
 	alias dircolors='gdircolors'
 fi
 alias grep='grep --color'                     # show differences in colour
