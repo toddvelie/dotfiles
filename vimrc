@@ -30,8 +30,12 @@ let g:netrw_liststyle=3
 
 " Change directory to the current buffer when opening files.
 set autochdir
+
+"Install pathogen to load plugins
 call pathogen#infect()
 call pathogen#helptags()
+
+" Personalize!
 inoremap jk <ESC>
 let mapleader = ","
 filetype plugin indent on
@@ -49,5 +53,4 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 set nowrap
-
-
+let g:mustache_abbreviations = 1
