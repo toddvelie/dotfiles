@@ -7,3 +7,6 @@
 [submodule "vim/bundle/mustache"]
 	path = vim/bundle/mustache
 	url = https://github.com/mustache/vim-mustache-handlebars.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git

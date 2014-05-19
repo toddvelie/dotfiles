@@ -8,7 +8,8 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim dir_colors tmux.conf"    # list of files/folders to symlink in homedir
+files="bashrc vimrc vim dir_colors tmux.conf oh-my-zsh zshrc"    # list of files/folders to symlink in homedir
+themes="bunsen.zsh-theme"
 updatemethod="git"
 
 ########## Determine update method
@@ -65,6 +66,26 @@ for file in $files; do
 		
 		echo "Creating symlink to $file in home directory."
 		ln -s $dir/$file ~/.$file
+	fi
+done
+echo "...done"
+
+# Link any omz-themes to the oh-my-zsh theme subdirectory
+echo "Creating symlinks for oh-my-zsh themes"
+for file in $themes; do
+	# If it is a symbolic link, check it for validity
+    if [[ -L $dir/oh-my-zsh/themes/$file ]]; then
+		if ! [[ $(readlink $dir/oh-my-zsh/themes/$file)  = $dir/omz-themes/$file  ]]; then
+			echo "Symlink is incorrect: $dir/oh-my-zsh/themes/$file, re-creating properly"
+			rm $dir/oh-my-zsh/themes/$file
+			ln -s $dir/omz-themes/$file $dir/oh-my-zsh/themes/$file
+		else
+			echo "Symlink already exists: $dir/omz-themes/$file, skipping."
+		fi
+	# It's not a symlink, so move it, and create the proper symlink
+	else
+		echo "Creating symlink to $file in oh-my-zsh theme directory"
+		ln -s $dir/omz-themes/$file $dir/oh-my-zsh/themes/$file
 	fi
 done
 echo "...done"

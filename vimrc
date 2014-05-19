@@ -35,13 +35,14 @@ set autochdir
 call pathogen#infect()
 call pathogen#helptags()
 
+
 " Personalize!
 inoremap jk <ESC>
 let mapleader = ","
-filetype plugin indent on
 syntax enable
 set background=dark
 colorscheme solarized
+filetype plugin indent on
 set encoding=utf-8
 set number
 filetype indent on
@@ -54,3 +55,10 @@ set shiftwidth=4
 set shiftround
 set nowrap
 let g:mustache_abbreviations = 1
+
+" Yank text to OS clipboard
+noremap <leader>y "*y
+noremap <leader>yy "*Y
+" Preserve indentation while pasting from the OS clipboard
+noremap <leader>p :set paste<CR>:put *<CR>:set nopaste<CR>
+
