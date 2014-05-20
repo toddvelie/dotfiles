@@ -14,8 +14,10 @@ export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 # if gls exists, use it (Happens on MaxOSX when I have to install GNU Coreutils.)
 if command -v gls >/dev/null != ''; then
 	alias ls="gls --color=auto -F" 
+	alias l="gls --color=auto -laF"
 else
 	alias ls="ls --color -F"
+	alias l="ls --color -laF"
 fi
 if command -v gdircolors >/dev/null != ''; then
 	alias dircolors='gdircolors'
