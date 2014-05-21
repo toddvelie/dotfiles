@@ -70,6 +70,13 @@ else
   export EDITOR='mvim'
 fi
 
+# Override ls if on a mac
+if [[ ( -f /usr/local/bin/gls ) ]] ; then
+	alias ls="gls --color=auto -F"
+	alias l="gls --color=auto -laF"
+	alias dircolors="gdircolors"
+fi
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
