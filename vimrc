@@ -55,10 +55,12 @@ set shiftwidth=4
 set shiftround
 set nowrap
 let g:mustache_abbreviations = 1
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
 
 " Yank text to OS clipboard
 noremap <leader>y "*y
 noremap <leader>yy "*Y
 " Preserve indentation while pasting from the OS clipboard
 noremap <leader>p :set paste<CR>:put *<CR>:set nopaste<CR>
-
+let g:tmuxline_preset = 'full'
