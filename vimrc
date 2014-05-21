@@ -63,4 +63,3 @@ noremap <leader>y "*y
 noremap <leader>yy "*Y
 " Preserve indentation while pasting from the OS clipboard
 noremap <leader>p :set paste<CR>:put *<CR>:set nopaste<CR>
-let g:tmuxline_preset = 'full'

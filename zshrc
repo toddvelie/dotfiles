@@ -48,6 +48,10 @@ alias fgrep='fgrep --color'
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Setup tmux plugin
+ZSH_TMUX_AUTOSTART="true"
+ZSH_TMUX_AUTOCONNECT="true"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -70,7 +74,7 @@ else
   export EDITOR='mvim'
 fi
 
-# Override ls if on a mac
+# Override to use gnu versions of coreutils if on a mac
 if [[ ( -f /usr/local/bin/gls ) ]] ; then
 	alias ls="gls --color=auto -F"
 	alias l="gls --color=auto -laF"
