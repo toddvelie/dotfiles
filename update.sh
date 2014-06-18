@@ -30,7 +30,7 @@ if [[ $updatemethod == "git" ]]; then
    echo "...done"
 else
     echo "Pulling dotfiles directory"
-#    scp -r wn7-d-toddv:~/dotfiles .
+    scp -r toddv@wn7-d-toddv:~/dotfiles ~/dotfiles
     echo "...done"
 fi
 #########

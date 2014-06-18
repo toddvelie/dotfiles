@@ -22,13 +22,6 @@ COMPLETION_WAITING_DOTS="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Setup tmux plugin:  If local login, autostart tmux
-if ! ([ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]); then 
-	#Local login
-	ZSH_TMUX_AUTOSTART="true"
-	ZSH_TMUX_AUTOCONNECT="false"
-fi
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)

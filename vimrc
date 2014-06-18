@@ -31,10 +31,20 @@ let g:netrw_liststyle=3
 " Change directory to the current buffer when opening files.
 set autochdir
 
-"Install pathogen to load plugins
-call pathogen#infect()
-call pathogen#helptags()
+"Vundle
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Bundle 'gmarik/Vundle.vim'
 
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-fugitive'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'altercation/vim-colors-solarized'
+
+
+call vundle#end()
+filetype plugin indent on
 
 " Personalize!
 inoremap jk <ESC>
@@ -42,7 +52,6 @@ let mapleader = ","
 syntax enable
 set background=dark
 colorscheme solarized
-filetype plugin indent on
 set encoding=utf-8
 set number
 filetype indent on
