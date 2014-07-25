@@ -1,9 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/toddvelie/Google Drive/House Transactions'
-let g:netrw_dirhist_2='/Users/toddvelie/Google Drive'
-let g:netrw_dirhist_3='/Users/toddvelie'
-let g:netrw_dirhist_4='/Users/toddvelie/Google Drive/ECUMC Tech Team'
-let g:netrw_dirhist_5='/Users/toddvelie'
-let g:netrw_dirhist_6='/Users/toddvelie/Google Drive'
-let g:netrw_dirhist_7='/Users/toddvelie'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/toddv/mgtservers/mgtpsydm104/etc'
+let g:netrw_dirhist_2='/home/toddv/mgtservers/mgtpsydm104/etc/logrotate.d'
+let g:netrw_dirhist_3='/home/toddv/mgtservers/mgtpsydm104/etc'
+let g:netrw_dirhist_4='/home/toddv/mgtservers/mgtpsydm104/etc/conntrackd'
