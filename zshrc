@@ -31,7 +31,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -59,7 +59,7 @@ fi
 #
 # Read in .dir_colors
 if [ "$TERM" != "dumb" ]; then
-  eval $(dircolors ~/.dir_colors)
+  eval $(dircolors -b ~/.dir_colors)
 fi
 
 
