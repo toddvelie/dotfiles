@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/toddv/mgtservers/mgtpsydm104/etc'
 let g:netrw_dirhist_2='/home/toddv/mgtservers/mgtpsydm104/etc/logrotate.d'
 let g:netrw_dirhist_3='/home/toddv/mgtservers/mgtpsydm104/etc'
 let g:netrw_dirhist_4='/home/toddv/mgtservers/mgtpsydm104/etc/conntrackd'
+let g:netrw_dirhist_5='/home/toddv'
+let g:netrw_dirhist_6='/home/toddv/.oh-my-zsh'
